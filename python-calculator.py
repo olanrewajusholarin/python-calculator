@@ -3,6 +3,17 @@
 input1 = ""
 input2 = ""
 selector = ""
+def collect_input():
+    while True:
+        try:
+            input1 = int(input("enter first number: "))
+            input2 = int(input("enter second number: "))
+            break
+        except ValueError:
+            print("Type a supported character!")
+    return input1, input2
+        
+
 print("Choose from the list of operations below:")
 print("* for multiplication")
 print("/ for division")
@@ -14,14 +25,12 @@ while selector != 'quit':
 # if the value of selector is '*'
     if selector == '*':
         print('you have selected multiplication!')
-        input1 = int(input("enter first number: "))
-        input2 = int(input("enter second number: "))
+        input1, input2 = collect_input()
         print(f'Answer:{input1 * input2}')
 # if the value of selector is '/'
     elif selector == '/':
         print('you have selected division!')
-        input1 = int(input("enter first number: "))
-        input2 = int(input("enter second number: "))
+        input1, input2 = collect_input()
         gym_vs_jim = float(input1 / input2)
         if input2 == '0':
             print('undefined bro')
@@ -29,14 +38,12 @@ while selector != 'quit':
 # if the value of selector is '-'
     elif selector == '-':
         print('you have selected subtraction!')
-        input1 = int(input("enter first number: "))
-        input2 = int(input("enter second number: "))
+        input1, input2 = collect_input()
         print(f'Answer:{input1 - input2}')
 # if the value of selector is '+'
     elif selector == '+':
         print('you have selected addition!')
-        input1 = int(input("enter first number: "))
-        input2 = int(input("enter second number: "))
+        input1, input2 = collect_input()
         print(f'Answer:{input1 + input2}')
 # if quit is entered,the program is terminated
     elif selector == 'quit':
